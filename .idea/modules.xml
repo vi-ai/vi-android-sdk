@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidSamples.iml" filepath="$PROJECT_DIR$/AndroidSamples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instream/instream.iml" filepath="$PROJECT_DIR$/instream/instream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/interstitial/interstitial.iml" filepath="$PROJECT_DIR$/interstitial/interstitial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mediationadmob/mediationadmob.iml" filepath="$PROJECT_DIR$/mediationadmob/mediationadmob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mediationfacebook/mediationfacebook.iml" filepath="$PROJECT_DIR$/mediationfacebook/mediationfacebook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mediationmopub/mediationmopub.iml" filepath="$PROJECT_DIR$/mediationmopub/mediationmopub.iml" />
+    </modules>
+  </component>
+</project>
