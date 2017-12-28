@@ -24,6 +24,13 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://maven.vi.ai/repository/mobileads-public/' }
+    maven {
+        url "https://maven.google.com"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -33,11 +40,11 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 
-    compile(name: 'admob', ext: 'aar') {
+    compile('ai.vi.mobileads:admob-adapter:2.0.0') {
         transitive true
     }
 
-    compile(name: 'viads-1.1-release', ext: 'aar') {
+    compile('ai.vi.mobileads:mobileads:2.0.0') {
         transitive true
     }
 
