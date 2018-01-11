@@ -1,1 +1,1 @@
-include ':interstitial', ':instream', ':mediationfacebook', ':mediationadmob', ':mediationmopub'
+include ':samples:interstitial', ':samples:instream', ':samples:mediationfacebook', ':samples:mediationadmob', ':samples:mediationmopub', ':samples:externaltracker'

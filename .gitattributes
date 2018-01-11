@@ -1,0 +1,5 @@
+samples/* linguist-documentation=false
+
+*.js linguist-documentation=true
+*.html linguist-documentation=true
+*.css linguist-documentation=true
