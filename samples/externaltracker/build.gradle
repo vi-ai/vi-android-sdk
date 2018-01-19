@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.0"
 
     defaultConfig {
-        applicationId "ai.vi.samples.instream"
+        applicationId "ai.vi.samples.externaltracker"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1

@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity implements ViAdCallback{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViAdPlacement viAdPlacement = ViAdPlacement.create("Vi Ad placementId");
+        String placementId = "plt8043b97cusitrk42"; //This placement is for test only, to receive personal placementId please register at https://vi.ai/publisher-video-monetization/
+
+        ViAdPlacement viAdPlacement = ViAdPlacement.create(placementId);
         viInterstitialAd = ViSdk.getInstance().createInterstitialAd(viAdPlacement, this);
         viInterstitialAd.registerMediatedAdapter(new AdMobViInterstitialMediationAdapter(this, "AdMob ID" , "AdMob placement ID"));
 

@@ -16,8 +16,12 @@ class MainActivityKt : AppCompatActivity(), ViAdCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viAdPlacement = ViAdPlacement.create("Interstitial placementId")
+        val placementId = "plt366ozya7gvgvmxvm" //This placement is for test only, to receive personal placementId please register at https://vi.ai/publisher-video-monetization/
+
+        val viAdPlacement = ViAdPlacement.create(placementId)
         viInterstitialAd = ViSdk.getInstance().createInterstitialAd(viAdPlacement, this)
+
+        start_ad.isEnabled = false
 
         viInterstitialAd?.let { viAd ->
             load_ad.setOnClickListener {
@@ -30,6 +34,7 @@ class MainActivityKt : AppCompatActivity(), ViAdCallback {
 
             start_ad.setOnClickListener {
                 if (viAd.isReady) {
+                    start_ad.isEnabled = false
                     viAd.startAd()
                 } else {
                     Toast.makeText(this@MainActivityKt, "Ad is not prepared", Toast.LENGTH_SHORT).show()
@@ -47,7 +52,9 @@ class MainActivityKt : AppCompatActivity(), ViAdCallback {
             ViAdEvent.ViAdEventType.AD_CLICKED -> { }
             ViAdEvent.ViAdEventType.AD_CLOSE -> { }
             ViAdEvent.ViAdEventType.AD_COMPLETED -> { }
-            ViAdEvent.ViAdEventType.AD_LOADED -> { }
+            ViAdEvent.ViAdEventType.AD_LOADED -> {
+                start_ad.isEnabled = true
+            }
             ViAdEvent.ViAdEventType.AD_RESUMED -> { }
             ViAdEvent.ViAdEventType.AD_STARTED -> { }
             null -> { }

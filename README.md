@@ -70,6 +70,27 @@ public class MyApplication extends Application {
 }
 ```
 
+For development you can enable debug mode by adding ```ViOptions``` to ```ViSdk.init()``` method: 
+
+```java
+import android.app.Application;
+import ai.vi.mobileads.api.ViSdk;
+import ai.vi.mobileads.api.ViOptions;
+
+public class MyApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        
+        ViOptions viOptions = new ViOptions();
+        viOptions.setDebuggable(true);
+        
+        ViSdk.init(this, viOptions);
+    }
+}
+```
+
 If you are an SDK rather than app developer, you should initialize us as soon as you are able to access the
 Application object.
 
@@ -373,3 +394,5 @@ import ai.vi.mobileads.adapter.countly.ViMobileAdsCountlyTracker;
 ViSdk.getInstance().registerExternalAdapter(new ViMobileAdsCountlyTracker());
 ```
 
+# Documentation
+Java API docs of can be found [here](https://cdn.rawgit.com/vi-ai/vi-android-sdk/2d641d21/libs/sdk/2.0.0/docs/index.html)

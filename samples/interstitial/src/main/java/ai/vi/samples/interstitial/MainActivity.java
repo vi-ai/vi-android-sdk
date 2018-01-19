@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import ai.vi.mobileads.api.ViAdCallback;
@@ -19,14 +20,25 @@ public class MainActivity extends AppCompatActivity implements ViAdCallback {
 
     private ViInterstitialAd viInterstitialAd;
 
+    private Button loadAd;
+    private Button playAd;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        loadAd = (Button) findViewById(R.id.load_ad);
+        playAd = (Button) findViewById(R.id.start_ad);
 
-        ViAdPlacement viAdPlacement = ViAdPlacement.create("Interstitial placementId");
+        playAd.setEnabled(false);
+
+        String placementId = "plt366ozya7gvgvmxvm"; //This placement is for test only, to receive personal placementId please register at https://vi.ai/publisher-video-monetization/
+
+        ViAdPlacement viAdPlacement = ViAdPlacement.create(placementId);
         viInterstitialAd = ViSdk.getInstance().createInterstitialAd(viAdPlacement, this);
-        findViewById(R.id.load_ad).setOnClickListener(new View.OnClickListener() {
+
+        loadAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!viInterstitialAd.isLoading() && !viInterstitialAd.isReady()) {
@@ -37,10 +49,11 @@ public class MainActivity extends AppCompatActivity implements ViAdCallback {
             }
         });
 
-        findViewById(R.id.start_ad).setOnClickListener(new View.OnClickListener() {
+        playAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(viInterstitialAd.isReady()) {
+                    playAd.setEnabled(false);
                     viInterstitialAd.startAd();
                 } else {
                     Toast.makeText(MainActivity.this, "Ad is not prepared", Toast.LENGTH_SHORT).show();
@@ -68,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements ViAdCallback {
                 break;
             }
             case AD_LOADED:{
+                playAd.setEnabled(true);
                 break;
             }
             case AD_RESUMED:{
