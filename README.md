@@ -1,3 +1,5 @@
+[![GitHub release](https://img.shields.io/github/release/vi-ai/vi-android-sdk.svg)](https://github.com/vi-ai/vi-android-sdk/releases)
+
 # video intelligence Android SDK integration documentation
 
 1. [SDK Integration](https://github.com/vi-ai/vi-android-sdk#step-1--include-the-vimobileadssdk-library-in-your-application)
@@ -395,4 +397,4 @@ ViSdk.getInstance().registerExternalAdapter(new ViMobileAdsCountlyTracker());
 ```
 
 # Documentation
-Java API docs of can be found [here](https://cdn.rawgit.com/vi-ai/vi-android-sdk/2d641d21/libs/sdk/2.0.0/docs/index.html)
+Java API docs of can be found [here](https://cdn.rawgit.com/vi-ai/vi-android-sdk/8c06355/libs/sdk/2.0.1/docs/index.html)
