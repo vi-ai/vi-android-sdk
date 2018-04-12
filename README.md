@@ -397,4 +397,4 @@ ViSdk.getInstance().registerExternalAdapter(new ViMobileAdsCountlyTracker());
 ```
 
 # Documentation
-Java API docs of can be found [here](https://cdn.rawgit.com/vi-ai/vi-android-sdk/8c06355/libs/sdk/2.0.1/docs/index.html)
+Java API docs of can be found [here](https://cdn.rawgit.com/vi-ai/vi-android-sdk/0c1ea46b/libs/sdk/2.0.2/docs/index.html)
